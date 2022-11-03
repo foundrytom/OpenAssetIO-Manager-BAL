@@ -34,16 +34,11 @@ manager behavior.
 ## Installation
 
 To use the plugin in an OpenAssetIO host, set (or append) the
-`OPENASSETIO_PLUGIN_PATH` env var to include the `python` directory in
-this checkout.
+`OPENASSETIO_PLUGIN_PATH` env var to include the `plugin` directory in
+this checkout, or install via `pip`.
 
 The plugin provides a manager with the identifier
 `org.openassetio.examples.manager.bal`.
-
-The plugin requires `openassetio` to be available to python at
-runtime. This is normally provided by the host tool or application (see
-the [project documentation](https://github.com/OpenAssetIO/OpenAssetIO#getting-started)
-for more information if you need to install yourself).
 
 ## Library file format
 
@@ -59,6 +54,7 @@ working directory is set to the root of this checkout:
 ```bash
 python -m venv .venv
 . .venv/bin/activate
+python -m pip install .
 python -m pip install -r tests/requirements.txt
-python -m pytest
+python -m pytest ./tests
 ```
