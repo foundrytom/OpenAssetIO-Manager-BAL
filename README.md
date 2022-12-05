@@ -33,9 +33,9 @@ manager behavior.
 
 ## Installation
 
-To use the plugin in an OpenAssetIO host, set (or append) the
+To use the plugin in an OpenAssetIO host, install via `pip`, or set (or append) the
 `OPENASSETIO_PLUGIN_PATH` env var to include the `plugin` directory in
-this checkout, or install via `pip`.
+a checkout of the [source repository](https://github.com/OpenAssetIO/OpenAssetIO-Manager-BAL).
 
 The plugin provides a manager with the identifier
 `org.openassetio.examples.manager.bal`.
@@ -49,7 +49,8 @@ that validates a BAL library file.
 
 The test fixtures take care of providing a suitable host environment and
 configuring the OpenAssetIO plugin search paths for you. Assuming your
-working directory is set to the root of this checkout:
+working directory is set to a checkout of the
+[source repository](https://github.com/OpenAssetIO/OpenAssetIO-Manager-BAL):
 
 ```bash
 python -m venv .venv
