@@ -12,7 +12,7 @@ v1.0.0-alpha.x
 ### New features
 
 - BAL now exposes an `openassetio.manager_plugin` entry point, and can
-  installed via `python -m pip` or similar. This allows it to be used
+  be installed via `python -m pip` or similar. This allows it to be used
   with OpenAssetIO without needing to extend `OPENASSETIO_PLUGIN_PATH`.
   [#9](https://github.com/OpenAssetIO/OpenAssetIO-Manager-BAL/issues/9)
 
