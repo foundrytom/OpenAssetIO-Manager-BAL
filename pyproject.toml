@@ -14,9 +14,8 @@ authors = [
 ]
 
 description = """\
-    A contrived "asset management system" for OpenAssetIO integration
-    test cases.
-    """
+A contrived "asset management system" for OpenAssetIO integration test cases.\
+"""
 keywords = ["openassetio", "manager"]
 classifiers = [
     "Development Status :: 3 - Alpha",
