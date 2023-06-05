@@ -52,6 +52,10 @@ some_registerable_traitsdata = TraitsData()
 some_registerable_traitsdata.setTraitProperty("trait1", "some", "stringValue")
 some_registerable_traitsdata.setTraitProperty("trait2", "count", 4)
 
+ref_with_known_relations = "bal:///entity/original"
+known_relationship_traitsdata = TraitsData({"proxy"})
+known_relationship_traitsdata.setTraitProperty("proxy", "type", "alt")
+
 fixtures = {
     "identifier": IDENTIFIER,
     "settings": {"library_path": test_library_path, "simulated_query_latency_ms": 1},
@@ -116,4 +120,42 @@ fixtures = {
             ),
         }
     },
+    "Test_getWithRelationship": {
+        "shared": {
+            "a_reference": ref_with_known_relations,
+            "a_relationship_trait_set": known_relationship_traitsdata.traitSet(),
+            "a_relationship_traits_data_with_props": known_relationship_traitsdata,
+            "relations_for_trait_set":
+            ["bal:///entity/proxy/1", "bal:///entity/proxy/2", "bal:///entity/proxy/3"],
+            "relations_for_traits_data_with_props": ["bal:///entity/proxy/3"],
+            "an_entity_trait_set_for_a_subset_of_relations": {"b"},
+            "relations_for_subset": ["bal:///entity/proxy/2", "bal:///entity/proxy/3"],
+            "a_reference_to_a_missing_entity": "bal:///missing_entity",
+            "the_error_string_for_a_malformed_reference": (
+                "Malformed BAL reference: Missing entity name in path component 'bal:///'"
+            ),
+            "the_error_string_for_a_reference_to_a_missing_entity": (
+                "Entity 'missing_entity' not found"
+            ),
+        }
+    },
+    "Test_getWithRelationships": {
+        "shared": {
+            "a_reference": ref_with_known_relations,
+            "a_relationship_trait_set": known_relationship_traitsdata.traitSet(),
+            "a_relationship_traits_data_with_props": known_relationship_traitsdata,
+            "relations_for_trait_set":
+            ["bal:///entity/proxy/1", "bal:///entity/proxy/2", "bal:///entity/proxy/3"],
+            "relations_for_traits_data_with_props": ["bal:///entity/proxy/3"],
+            "an_entity_trait_set_for_a_subset_of_relations": {"b"},
+            "relations_for_subset": ["bal:///entity/proxy/2", "bal:///entity/proxy/3"],
+            "a_reference_to_a_missing_entity": "bal:///missing_entity",
+            "the_error_string_for_a_malformed_reference": (
+                "Malformed BAL reference: Missing entity name in path component 'bal:///'"
+            ),
+            "the_error_string_for_a_reference_to_a_missing_entity": (
+                "Entity 'missing_entity' not found"
+            ),
+        }
+    }
 }
